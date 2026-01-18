@@ -10,6 +10,7 @@ import SignSection from './components/SignSection';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import AboutUs from './components/AboutUs';
+import ConvertSection from './components/ConvertSection';
 import './App.css';
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
       handleOpenPdf('editor'); // Print from editor
     } else if (['privacy', 'terms', 'about'].includes(route)) {
       setView(route);
+    } else if (['pdf-to-word', 'pdf-to-excel', 'pdf-to-ppt', 'pdf-to-jpg'].includes(route)) {
+      handleOpenPdf(route);
     } else {
       handleOpenPdf(route);
     }
@@ -158,6 +161,15 @@ function App() {
 
       {view === 'about' && (
         <AboutUs onBack={handleBackToDashboard} />
+      )}
+
+      {['pdf-to-word', 'pdf-to-excel', 'pdf-to-ppt', 'pdf-to-jpg'].includes(view) && (
+        <ConvertSection
+          fileData={fileData}
+          fileName={pdfFile?.name}
+          mode={view}
+          onBack={handleBackToDashboard}
+        />
       )}
     </div>
   );

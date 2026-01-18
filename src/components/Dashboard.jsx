@@ -172,25 +172,25 @@ const Dashboard = ({ onNavigate }) => {
                                 icon={FileText}
                                 title="PDF to Word"
                                 desc="Convert your PDF files to editable Word documents."
-                                onClick={() => alert("PDF to Word conversion coming soon!")}
+                                onClick={() => onNavigate('pdf-to-word')}
                             />
                             <ToolCard
                                 icon={FileSpreadsheet}
                                 title="PDF to Excel"
                                 desc="Extract data from PDF tables to Excel spreadsheets."
-                                onClick={() => alert("PDF to Excel conversion coming soon!")}
+                                onClick={() => onNavigate('pdf-to-excel')}
                             />
                             <ToolCard
                                 icon={Presentation}
                                 title="PDF to PPT"
                                 desc="Turn your PDF slides into PowerPoint presentations."
-                                onClick={() => alert("PDF to PowerPoint conversion coming soon!")}
+                                onClick={() => onNavigate('pdf-to-ppt')}
                             />
                             <ToolCard
                                 icon={ImageIcon}
                                 title="PDF to JPG"
                                 desc="Convert each PDF page into a high-quality image."
-                                onClick={() => alert("PDF to Image conversion coming soon!")}
+                                onClick={() => onNavigate('pdf-to-jpg')}
                             />
                         </div>
                     </section>
