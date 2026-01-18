@@ -7,6 +7,9 @@ import OrganizeSection from './components/OrganizeSection';
 import EncryptSection from './components/EncryptSection';
 import CompressSection from './components/CompressSection';
 import SignSection from './components/SignSection';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import AboutUs from './components/AboutUs';
 import './App.css';
 
 function App() {
@@ -141,6 +144,18 @@ function App() {
             onBack={handleBackToDashboard}
           />
         </>
+      )}
+
+      {view === 'privacy' && (
+        <PrivacyPolicy onBack={handleBackToDashboard} />
+      )}
+
+      {view === 'terms' && (
+        <TermsOfService onBack={handleBackToDashboard} />
+      )}
+
+      {view === 'about' && (
+        <AboutUs onBack={handleBackToDashboard} />
       )}
     </div>
   );

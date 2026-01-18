@@ -283,9 +283,10 @@ const Dashboard = ({ onNavigate }) => {
             <footer className="dashboard-footer">
                 <p>&copy; {new Date().getFullYear()} PDF Master. All rights reserved.</p>
                 <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1rem', fontSize: '0.9rem' }}>
-                    <a href="#" style={{ color: '#64748b' }}>Privacy Policy</a>
-                    <a href="#" style={{ color: '#64748b' }}>Terms of Service</a>
-                    <a href="#" style={{ color: '#64748b' }}>Contact Us</a>
+                    <button onClick={() => onNavigate('privacy')} style={{ color: '#64748b', background: 'none', border: 'none', cursor: 'pointer' }}>Privacy Policy</button>
+                    <button onClick={() => onNavigate('terms')} style={{ color: '#64748b', background: 'none', border: 'none', cursor: 'pointer' }}>Terms of Service</button>
+                    <button onClick={() => onNavigate('about')} style={{ color: '#64748b', background: 'none', border: 'none', cursor: 'pointer' }}>About Us</button>
+                    <a href="mailto:contact@pdfmaster.io" style={{ color: '#64748b', textDecoration: 'none' }}>Contact Us</a>
                 </div>
             </footer>
         </div>
