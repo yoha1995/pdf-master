@@ -1,0 +1,156 @@
+/* Shared styles for Organize & Encrypt views */
+
+.tool-view-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--bg-color);
+    color: white;
+}
+
+.tool-header {
+    height: 60px;
+    background-color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    background: #0f172a;
+}
+
+.centered-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Encrypt */
+.enc-card {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.password-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.password-input:focus {
+    border-color: var(--accent-color);
+}
+
+/* Organize */
+.organize-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.org-page-card {
+    background: #1e293b;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.org-page-card.removed {
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.org-thumb-wrapper {
+    background: white;
+    min-width: 150px;
+    min-height: 200px;
+    /* Approximate A4 ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.removed-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: rotate(-15deg);
+}
+
+.org-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.org-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.org-actions button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.org-actions button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.org-actions .del-btn:hover {
+    background: #ef4444;
+}

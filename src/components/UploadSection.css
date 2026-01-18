@@ -1,0 +1,38 @@
+.upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 500px;
+}
+
+.upload-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.upload-box:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+}
+
+.upload-icon {
+    color: var(--accent-color);
+}

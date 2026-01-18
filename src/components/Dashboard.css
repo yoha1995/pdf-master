@@ -1,0 +1,302 @@
+/* Main Dashboard Layout to support Ads & Content */
+.dashboard-container-full {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-nav {
+    height: 70px;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-brand span {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-hero {
+    padding: 3rem 10% 1rem 10%;
+    text-align: center;
+    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-color) 70%);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 3 Column Layout */
+.dashboard-layout-3col {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.ad-column {
+    width: 160px;
+    flex-shrink: 0;
+    display: none;
+}
+
+/* Show side ads only on large desktops to avoid crowding */
+@media (min-width: 1400px) {
+    .ad-column {
+        display: block;
+    }
+}
+
+.sticky-ad {
+    position: sticky;
+    top: 90px;
+}
+
+.main-content-centered {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+}
+
+
+
+/* Tools Grid (Main Content) */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Tool Card Updates */
+.tool-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+/* Guides / Blog Section */
+.content-section {
+    margin-top: 2rem;
+}
+
+.guide-card {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guide-card h3 {
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.guide-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.guide-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guide-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guide-card li:before {
+    content: "•";
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+
+/* Featured Posts */
+.featured-posts {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.post-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.post-card h4 {
+    color: #fbbf24;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.post-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fbbf24;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.dashboard-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 10%;
+    margin-top: auto;
+    background: #0f172a;
+    text-align: center;
+    color: #64748b;
+}
+
+/* Collapsible Guide Styles */
+.collapsible-guide {
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    /* Slightly smaller radius */
+    overflow: hidden;
+    background: rgba(30, 41, 59, 0.3);
+}
+
+.guide-header {
+    padding: 0.75rem 1rem;
+    /* Compact padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(30, 41, 59, 0.5);
+    transition: background 0.2s;
+}
+
+.guide-header:hover {
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.guide-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    /* Smaller font size */
+    color: #fbbf24;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guide-content {
+    padding: 1rem;
+    /* Compact padding */
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    /* Smaller content font */
+    line-height: 1.5;
+    /* Tighten line height */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guide-content p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.guide-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.guide-content li {
+    margin-bottom: 0.4rem;
+    /* Tighter list items */
+}
