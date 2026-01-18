@@ -91,7 +91,7 @@ const Dashboard = ({ onNavigate }) => {
             {/* Navigation */}
             <nav className="dashboard-nav">
                 <div className="nav-brand">
-                    <FileText size={28} color="#fbbf24" />
+                    <img src="/favicon.png" alt="PDF Master Logo" style={{ width: '32px', height: '32px', borderRadius: '4px' }} />
                     <span>PDF Master</span>
                 </div>
                 <div className="nav-links">
