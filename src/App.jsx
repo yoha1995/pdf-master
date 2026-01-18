@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FileText } from 'lucide-react';
 import EditorSection from './components/EditorSection';
 import Dashboard from './components/Dashboard';
@@ -62,46 +63,84 @@ function App() {
 
   return (
     <div className="app-container">
-      {view === 'dashboard' && <Dashboard onNavigate={navigateTo} />}
+      {view === 'dashboard' && (
+        <>
+          <Helmet>
+            <title>PDF Master - Online PDF Dashboard</title>
+            <meta name="description" content="Access all your PDF tools in one place. Edit, compress, sign, and organize your PDF files with PDF Master's dashboard." />
+          </Helmet>
+          <Dashboard onNavigate={navigateTo} />
+        </>
+      )}
 
       {view === 'editor' && (
-        <EditorSection
-          fileData={fileData}
-          fileName={pdfFile?.name}
-          onBack={handleBackToDashboard}
-        />
+        <>
+          <Helmet>
+            <title>Edit PDF - PDF Master</title>
+            <meta name="description" content="Edit your PDF files online with our powerful and easy-to-use editor. Add text, images, and more." />
+          </Helmet>
+          <EditorSection
+            fileData={fileData}
+            fileName={pdfFile?.name}
+            onBack={handleBackToDashboard}
+          />
+        </>
       )}
 
       {view === 'organize' && (
-        <OrganizeSection
-          fileData={fileData}
-          fileName={pdfFile?.name}
-          onBack={handleBackToDashboard}
-        />
+        <>
+          <Helmet>
+            <title>Organize PDF - PDF Master</title>
+            <meta name="description" content="Organize your PDF pages effortlessly. Merge, split, or reorder pages in your PDF files." />
+          </Helmet>
+          <OrganizeSection
+            fileData={fileData}
+            fileName={pdfFile?.name}
+            onBack={handleBackToDashboard}
+          />
+        </>
       )}
 
       {view === 'encrypt' && (
-        <EncryptSection
-          fileData={fileData}
-          fileName={pdfFile?.name}
-          onBack={handleBackToDashboard}
-        />
+        <>
+          <Helmet>
+            <title>Encrypt PDF - PDF Master</title>
+            <meta name="description" content="Secure your PDF files with password protection. Encrypt your documents and keep them safe." />
+          </Helmet>
+          <EncryptSection
+            fileData={fileData}
+            fileName={pdfFile?.name}
+            onBack={handleBackToDashboard}
+          />
+        </>
       )}
 
       {view === 'compress' && (
-        <CompressSection
-          fileData={fileData}
-          fileName={pdfFile?.name}
-          onBack={handleBackToDashboard}
-        />
+        <>
+          <Helmet>
+            <title>Compress PDF - PDF Master</title>
+            <meta name="description" content="Reduce the file size of your PDFs without losing quality. Optimize your documents for sharing." />
+          </Helmet>
+          <CompressSection
+            fileData={fileData}
+            fileName={pdfFile?.name}
+            onBack={handleBackToDashboard}
+          />
+        </>
       )}
 
       {view === 'sign' && (
-        <SignSection
-          fileData={fileData}
-          fileName={pdfFile?.name}
-          onBack={handleBackToDashboard}
-        />
+        <>
+          <Helmet>
+            <title>Sign PDF - PDF Master</title>
+            <meta name="description" content="Sign your PDF documents electronically. Fast, secure, and legally binding digital signatures." />
+          </Helmet>
+          <SignSection
+            fileData={fileData}
+            fileName={pdfFile?.name}
+            onBack={handleBackToDashboard}
+          />
+        </>
       )}
     </div>
   );
