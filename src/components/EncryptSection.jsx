@@ -16,10 +16,12 @@ const EncryptSection = ({ fileData, fileName, onBack }) => {
         }
         setLoading(true);
         try {
-            const pdfDoc = await PDFDocument.load(fileData);
+            const { encrypt } = await import('@pdfsmaller/pdf-encrypt-lite');
 
-            // Basic encryption settings
-            pdfDoc.encrypt({
+            // Ensure we have Uint8Array for the encryption library
+            const inputBytes = new Uint8Array(fileData);
+
+            const encryptedBytes = await encrypt(inputBytes, {
                 userPassword: password,
                 ownerPassword: password,
                 permissions: {
@@ -33,13 +35,11 @@ const EncryptSection = ({ fileData, fileName, onBack }) => {
                 }
             });
 
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const blob = new Blob([encryptedBytes], { type: 'application/pdf' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
             link.download = `encrypted_${fileName}`;
             link.click();
-
         } catch (err) {
             console.error(err);
             alert("Error encrypting: " + err.message);
