@@ -53,6 +53,8 @@ function App() {
       handleCreateNew();
     } else if (route === 'print') {
       handleOpenPdf('editor'); // Print from editor
+    } else if (['privacy', 'terms', 'about'].includes(route)) {
+      setView(route);
     } else {
       handleOpenPdf(route);
     }
